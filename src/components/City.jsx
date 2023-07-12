@@ -61,7 +61,12 @@ const styles = StyleSheet.create({
   wrapper: {
     flex: 1,
     alignItems: 'center',
-    justifyContent: 'space-evenly'
+    justifyContent: 'space-evenly',
+    backgroundColor: 'royalblue',
+    margin: 60,
+    paddingVertical: 50,
+    borderRadius: 10,
+    borderWidth: 5
   },
   bg: {
     flex: 1,

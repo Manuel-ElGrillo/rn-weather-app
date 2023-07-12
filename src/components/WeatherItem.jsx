@@ -9,10 +9,14 @@ const WeatherItem = ({ dt_txt, min, max, condition }) => {
     <View style={styles.item}>
       <Feather name={weatherType[condition].icon} size={50} color={'white'} />
       <View style={styles.textWrapper}>
-        <Text style={styles.date}>{moment(dt_txt).format('dddd')}</Text>
-        <Text style={styles.date}>{moment(dt_txt).format('h:mm a')}</Text>
-        <Text style={styles.temp}>{Math.round(min)}°C</Text>
-        <Text style={styles.temp}>{Math.round(max)}°C</Text>
+        <View>
+          <Text style={styles.date}>{moment(dt_txt).format('dddd')}</Text>
+          <Text style={styles.date}>{moment(dt_txt).format('h:mm a')}</Text>
+        </View>
+        <View style={{paddingHorizontal: 30}}>
+          <Text style={styles.temp}>{`High ${Math.round(min)}`}°C</Text>
+          <Text style={styles.temp}>{`Low ${Math.round(max)}`}°C</Text>
+        </View>
       </View>
     </View>
   )
@@ -30,6 +34,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     borderWidth: 5,
     backgroundColor: 'royalblue',
+    borderRadius: 10
   },
   temp: {
     color: 'white',
@@ -40,6 +45,7 @@ const styles = StyleSheet.create({
     fontSize: 15,
   },
   textWrapper: {
-    flexDirection: 'column'
+    flexDirection: 'row',
+    alignItems: 'center',
   }
 })
